@@ -10,7 +10,6 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
   return (
     <Grid item xs={6} sm={4} md={3}>
       <Card variant="outlined">
-        {" "}
         <CardContent>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             {pokemon.id}

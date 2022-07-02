@@ -1,11 +1,9 @@
 import { Box, TextField } from "@mui/material";
 import { useAtom } from "jotai";
-import React from "react";
 import { searchAtom } from "../atoms";
 
 const SearchBar = () => {
   const [search, setSearch] = useAtom(searchAtom);
-  console.log("search rerendered");
   return (
     <Box sx={{ my: 2 }}>
       <TextField
