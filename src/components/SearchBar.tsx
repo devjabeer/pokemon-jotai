@@ -1,17 +1,26 @@
 import { Box, TextField } from "@mui/material";
-import { useAtom } from "jotai";
+import { useSetAtom } from "jotai";
+import { useState, useTransition } from "react";
 import { searchAtom } from "../atoms";
 
 const SearchBar = () => {
-  const [search, setSearch] = useAtom(searchAtom);
+  const setSearch = useSetAtom(searchAtom);
+  const [, startTransition] = useTransition();
+  const [input, setInput] = useState("");
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setInput(e.target.value);
+    startTransition(() => setSearch(input));
+  };
   return (
     <Box sx={{ my: 2 }}>
       <TextField
         id="outlined-basic"
         label="Search Pokemon"
         variant="outlined"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        value={input}
+        onChange={handleChange}
       />
     </Box>
   );
