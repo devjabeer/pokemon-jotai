@@ -7,7 +7,7 @@ const SearchBar = () => {
   const [search, setSearch] = useAtom(searchAtom);
   console.log("search rerendered");
   return (
-    <Box>
+    <Box sx={{ my: 2 }}>
       <TextField
         id="outlined-basic"
         label="Search Pokemon"
