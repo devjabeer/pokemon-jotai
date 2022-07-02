@@ -1,10 +1,12 @@
+import { Container } from "@mui/system";
 import React from "react";
-import "./App.css";
 import Pokemon from "./components/Pokemon";
 function App() {
   return (
     <div className="App">
-      <Pokemon />
+      <Container>
+        <Pokemon />
+      </Container>
     </div>
   );
 }
