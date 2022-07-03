@@ -1,6 +1,5 @@
 import axios from "axios";
 import { atom } from "jotai";
-import { startTransition } from "react";
 import { IPokemon } from "../types/pokemon";
 
 const URL =
